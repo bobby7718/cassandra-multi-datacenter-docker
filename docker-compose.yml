@@ -1,0 +1,44 @@
+version: '2'
+services:
+  #
+  # Datacenter 1 seed node
+  #
+  seeddc1:
+      build: cassandra
+      environment:
+          - DATACENTER=DC1
+      ports:
+          - "9042:9042"
+          - "9160:9160"
+  #
+  # Datacenter 1 non-seed node
+  #
+  nodedc1:
+      build: cassandra
+      environment:
+          - DATACENTER=DC1
+  #
+  # Datacenter 2 seed node
+  #
+  seeddc2:
+      build: cassandra
+      environment:
+          - DATACENTER=DC2
+      ports:
+          - "9043:9042"
+          - "9161:9160"
+  #
+  # Datacenter 2 non-seed node
+  #
+  nodedc2:
+      build: cassandra
+      environment:
+          - DATACENTER=DC2
+  #
+  # Ops Center Node
+  #
+  nodeops:
+      build: opscenter
+      ports:
+          - "8888:8888"
+          - "61620:61620"
