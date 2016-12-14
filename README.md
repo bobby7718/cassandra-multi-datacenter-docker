@@ -9,6 +9,8 @@ This is a multi datacenter dockerized Cassandra cluster inspired by [cassandra-d
 * Ops Center is now supported - work in progress
 * sample applications demonstrating failover of cluster doesn't impact write/read. - work in progress
 
+![alt tag](architecture.png)
+
 ## Prerequisites
 
 * Docker 1.10+ for Embedded DNS server
